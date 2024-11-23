@@ -12,7 +12,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")    # Флаг для компилят
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 endif()
 install(TARGETS lab7 DESTINATION bin)
-set(CPACK_GENERATOR "ZIP;DEB")
+set(CPACK_GENERATOR "ZIP")
 set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
 set(CPACK_PACKAGE_NAME "lab7")
 set(CPACK_PACKAGE_DESCRIPTION "Описание вашего проекта")

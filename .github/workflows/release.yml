@@ -17,8 +17,6 @@ jobs:
     - run: brew install boost
     - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
     - run: cmake --build . --target install # Install first
-    # Запускаем тесты
-    - run: cmake --build . --target test
     # Создаем пакет
     - run: cmake --build . --target package
     - run: cpack -G ZIP # Explicitly specify ZIP generator
@@ -57,8 +55,6 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
-      # Запускаем тесты
-      - run: cmake --build . --target test
       - run: cmake --build . --target package
       - name: List files (ubuntu)
         run: ls

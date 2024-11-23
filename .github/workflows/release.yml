@@ -52,7 +52,10 @@ jobs:
         with:
           submodules: true
        # Устанавливаем libboost-test-dev
-      - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
+      - name: Install Boost
+        run: |
+          sudo apt update
+          sudo apt install libboost-all-dev -y # Установка всех компонентов Boost
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_INSTALL_PREFIX=`pwd`/install
       - run: cmake --build .
       - run: cmake --build . --target package

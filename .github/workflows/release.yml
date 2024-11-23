@@ -15,7 +15,7 @@ jobs:
         submodules: true
     # Устанавливаем boost с помощью Homebrew
     - run: brew install boost
-    - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
+    - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_INSTALL_PREFIX=`pwd`/install
     - run: cmake --build . --target install # Install first
     # Создаем пакет
     - run: cmake --build . --target package
@@ -53,7 +53,7 @@ jobs:
           submodules: true
        # Устанавливаем libboost-test-dev
       - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
-      - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
+      - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_INSTALL_PREFIX=`pwd`/install
       - run: cmake --build .
       - run: cmake --build . --target package
       - name: List files (ubuntu)

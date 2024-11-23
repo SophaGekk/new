@@ -15,7 +15,7 @@ jobs:
         submodules: true
     # Устанавливаем boost с помощью Homebrew
     - run: brew install boost
-    - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_INSTALL_PREFIX=`pwd`/install
+    - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
     - run: cmake --build . --target install # Install first
     # Запускаем тесты
     - run: cmake --build . --target test

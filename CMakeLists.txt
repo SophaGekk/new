@@ -21,17 +21,17 @@ set(CPACK_PACKAGE_CONTACT "Ваш контактный email")
 include(CPack)
 
 # set(BOOST_ROOT "C:/Users/Sopha/Downloads/boost") 
-set(BOOST_ROOT "${PROJECT_SOURCE_DIR}/boost") # Относительный путь
-set(Boost_INCLUDE_DIRS "${BOOST_ROOT}/boost/spirit/include/")
-set(Boost_LIBRARIES "${BOOST_ROOT}/libs") 
+# # set(BOOST_ROOT "${PROJECT_SOURCE_DIR}/boost") # Относительный путь
+# set(Boost_INCLUDE_DIRS "${BOOST_ROOT}/boost/spirit/include/")
+# set(Boost_LIBRARIES "${BOOST_ROOT}/libs") 
 
-# Проверка, существуют ли указанные директории
-if(NOT EXISTS "${Boost_INCLUDE_DIRS}")
-  message(FATAL_ERROR "Boost include directory not found: ${Boost_INCLUDE_DIRS}")
-endif()
-if(NOT EXISTS "${Boost_LIBRARIES}")
-  message(FATAL_ERROR "Boost libraries directory not found: ${Boost_LIBRARIES}")
-endif()
+# # Проверка, существуют ли указанные директории
+# if(NOT EXISTS "${Boost_INCLUDE_DIRS}")
+#   message(FATAL_ERROR "Boost include directory not found: ${Boost_INCLUDE_DIRS}")
+# endif()
+# if(NOT EXISTS "${Boost_LIBRARIES}")
+#   message(FATAL_ERROR "Boost libraries directory not found: ${Boost_LIBRARIES}")
+# endif()
 
 # Находим Boost и проверяем, что он найден
 find_package(Boost REQUIRED COMPONENTS filesystem program_options)
